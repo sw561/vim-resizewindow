@@ -1,7 +1,7 @@
 More intuitive way to resize windows in Vim
 ===========================================
 
-[![Build Status](https://travis-ci.org/chaoren/vim-resizewindow.svg?branch=master)](https://travis-ci.org/chaoren/vim-resizewindow)
+[![Build Status](https://travis-ci.org/sw561/vim-resizewindow.svg?branch=master)](https://travis-ci.org/sw561/vim-resizewindow)
 
 This plugin provides direction based resizing of windows.
 
