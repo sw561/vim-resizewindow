@@ -11,16 +11,16 @@ most window.
 
 MAPPINGS					*resizewindow-mappings*
 
-						*resizewindow-CTRL-W_CTRL_H*
-CTRL-W CTRL-H	Resize current window to the left by N (default 1).
+						*<Plug>ResizeWindowLeft*
+Resize current window to the left by N (default 1).
 
-						*resizewindow-CTRL-W_CTRL_J*
-CTRL-W CTRL-J	Resize current window downwards by N (default 1).
+						*<Plug>ResizeWindowDown*
+Resize current window downwards by N (default 1).
 
-						*resizewindow-CTRL-W_CTRL_K*
-CTRL-W CTRL-K	Resize current window upwards by N (default 1).
+						*<Plug>ResizeWindowUp*
+Resize current window upwards by N (default 1).
 
-						*resizewindow-CTRL-W_CTRL_L*
-CTRL-W CTRL-L	Resize current window to the right by N (default 1).
+						*<Plug>ResizeWindowRight*
+Resize current window to the right by N (default 1).
 
  vim:tw=78:ts=8:ft=help:norl:

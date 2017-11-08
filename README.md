@@ -13,17 +13,13 @@ right most window.
 Customization
 =============
 
-The default mappings are `<C-W><C-H>`, `<C-W><C-J>`, `<C-W><C-K>`, and
-`<C-W><C-L>`.
-
-Use the `<Plug>ResizeWindow[DIR]` mappings to replace the default mappings.
+Use the `<Plug>ResizeWindow[DIR]` mappings to set your preferred key bindings.
 E.g.
 ```
-map <C-W><C-K> <Plug>ResizeWindowUp
-map <C-W><C-J> <Plug>ResizeWindowDown
-map <C-W><C-H> <Plug>ResizeWindowLeft
-map <C-W><C-L> <Plug>ResizeWindowRight
+nmap <M-K> <Plug>ResizeWindowUp
+nmap <M-J> <Plug>ResizeWindowDown
+nmap <M-H> <Plug>ResizeWindowLeft
+nmap <M-L> <Plug>ResizeWindowRight
 ```
-Note that since `<Plug>ResizeWindow[DIR]` is itself a mapping, `noremap` will
+Note that since `<Plug>ResizeWindow[DIR]` are themselves mappings, `noremap` will
 not work.
-To disable the mapping, set `g:resizewindow_mappings = 0`.

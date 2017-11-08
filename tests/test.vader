@@ -1,3 +1,26 @@
+Execute (Check no mappings):
+  Assert !hasmapto('<Plug>ResizeWindowLeft'), 'ML'
+  Assert !hasmapto('<Plug>ResizeWindowUp'), 'MU'
+  Assert !hasmapto('<Plug>ResizeWindowDown'), 'MD'
+  Assert !hasmapto('<Plug>ResizeWindowRight'), 'MR'
+
+Do (Set up mappings):
+  :nmap <C-W><C-K> <Plug>ResizeWindowUp\<Enter>
+  :nmap <C-W><C-J> <Plug>ResizeWindowDown\<Enter>
+  :nmap <C-W><C-H> <Plug>ResizeWindowLeft\<Enter>
+  :nmap <C-W><C-L> <Plug>ResizeWindowRight\<Enter>
+
+Before (Single window tests):
+  let height = winheight(0)
+
+Execute (Resize single window):
+  execute 'normal' "\<M-K>"
+  AssertEqual winheight(0), height
+
+Execute (Resize single window back):
+  execute 'normal' "\<M-J>"
+  AssertEqual winheight(0), height
+
 After (Close all extra windows):
   for @_ in range(8)
     close
@@ -158,3 +181,15 @@ Execute (Resize by 6 to the right):
   execute 'normal' "6\<C-W>\<C-L>"
   AssertEqual height, winheight(0)
   AssertEqual 6, abs(width - winwidth(0))
+
+Do (Remove mappings):
+  :nunmap <C-W><C-K>\<Enter>
+  :nunmap <C-W><C-J>\<Enter>
+  :nunmap <C-W><C-H>\<Enter>
+  :nunmap <C-W><C-L>\<Enter>
+
+Execute (Check no mappings):
+  Assert !hasmapto('<Plug>ResizeWindowLeft')
+  Assert !hasmapto('<Plug>ResizeWindowUp')
+  Assert !hasmapto('<Plug>ResizeWindowDown')
+  Assert !hasmapto('<Plug>ResizeWindowRight')
